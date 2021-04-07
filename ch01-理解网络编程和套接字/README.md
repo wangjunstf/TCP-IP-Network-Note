@@ -1,19 +1,3 @@
-# TCP-IP-Network-Note
-本仓库是我的《TCP/IP网络编程》学习笔记以及代码实现。笔者使用Linux平台，因此本笔记只包括Linux部分。如果本笔记对您有用，别忘了点一个star。转载请注明出处，谢谢。
-
-**运行环境**
-> 操作系统： Ubuntu 18.04.5 LTS
->
-> gcc 8.4.0 (Ubuntu 8.4.0-1ubuntu1~18.04)
->
-> g++ 8.4.0 (Ubuntu 8.4.0-1ubuntu1~18.04)
-
-本项目的Github地址：[TCP-IP-Network-Note](https://github.com/wangjunstf/TCP-IP-Network-Note)。
-
-如果在阅读本笔记的过程中发现`错别字`或者 `bug` ，欢迎向本项目提交 `PR`。
-
-
-
 ## 第1章 理解网络编程和套接字
 
 ### 1.1 理解网络编程和套接字
@@ -360,12 +344,4 @@ gcc fd_seric.c  -o fds
 ### 1.3 基于Windows平台的实现
 
 暂略，以后有时间补充
-
-
-
-
-
-
-
-
 
