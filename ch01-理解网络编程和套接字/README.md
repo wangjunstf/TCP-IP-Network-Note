@@ -89,7 +89,7 @@ int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 
 服务器端（server）是能够受理连接请求的程序。下面构建服务器端以验证之前提到的函数调用过程，该服务器端收到连接请求后向请求者返回“Hello world!”答复。除各种函数的调用顺序外，我们还未涉及任何实际编程。因此，阅读代码请重点关注套接字相关函数的调用过程，不必理解全部示例。
 
-服务端代码请参见：[hello_server.c](./src/hello_server.c)
+服务端代码请参见：[hello_server.c](https://github.com/wangjunstf/TCP-IP-Network-Note/blob/main/ch01-%E7%90%86%E8%A7%A3%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A5%97%E6%8E%A5%E5%AD%97/src/hello_server.c)
 
 
 
@@ -100,7 +100,7 @@ int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 1. 调用socket函数和connect函数
 2. 与服务端共同运行以收发字符串数据
 
-客户端代码请参见：[hello_client.c](./src/hello_client.c)
+客户端代码请参见：[hello_client.c](https://github.com/wangjunstf/TCP-IP-Network-Note/blob/main/ch01-%E7%90%86%E8%A7%A3%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A5%97%E6%8E%A5%E5%AD%97/src/hello_server.c)
 
 
 
@@ -236,7 +236,7 @@ ssize_t write(int fd, const void* buf, size_t nbytes);
 
 下面通过示例帮助大家更好地理解前面讨论过的函数。此程序将创建新文件并保存数据。
 
-写数据程序代码参见：[low_open.c](./src/low_open.c)
+写数据程序代码参见：[low_open.c](https://github.com/wangjunstf/TCP-IP-Network-Note/blob/main/ch01-%E7%90%86%E8%A7%A3%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A5%97%E6%8E%A5%E5%AD%97/src/low_open.c)
 
 ```c
 #include<stdio.h>
@@ -305,7 +305,7 @@ ssize_t read(inf fd, void* buf, size_t nbytes);
 
 下列示例将通过read函数读取data.txt中保存的数据。
 
-代码参见：[low_read.c](./src/low_read.c)
+代码参见：[low_read.c](https://github.com/wangjunstf/TCP-IP-Network-Note/blob/main/ch01-%E7%90%86%E8%A7%A3%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A5%97%E6%8E%A5%E5%AD%97/src/low_read.c)
 
 
 
@@ -326,7 +326,7 @@ gcc low_read.c -o lread
 
 下面将同时创建文件和套接字，并用整数形态比较返回的文件描述值。
 
-代码参见： [fd_seri.c](./src/fd_seri.c)
+代码参见： [fd_seri.c](https://github.com/wangjunstf/TCP-IP-Network-Note/blob/main/ch01-%E7%90%86%E8%A7%A3%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A5%97%E6%8E%A5%E5%AD%97/src/fd_seric.c)
 
 ```shell
 gcc fd_seric.c  -o fds
@@ -343,5 +343,4 @@ gcc fd_seric.c  -o fds
 
 ### 1.3 基于Windows平台的实现
 
-暂略，以后有时间补充
-
+暂略
