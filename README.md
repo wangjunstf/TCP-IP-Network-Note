@@ -361,7 +361,63 @@ gcc fd_seric.c  -o fds
 
 暂略
 
+### 1.5 习题
 
+（1）套接字在网络编程中的作用是什么？为何称它为套接字？
+
+> 套接字是操作系统提供的**部件**，是网络数据传输用的**软件设备**，用于**网络数据传输**。
+>
+> 我们把插头插到插座上能从电网获得电力供给，同样，我们为了与远程计算机进行数据传输，需要连接因特网，而编程中的“套接字”就是用来连接该网络的工具。
+
+
+
+（2）在服务器端创建套接字以后，会依次调用 listen 函数和 accept 函数。请比较二者作用。
+
+> 调用listen将套接字转为可接收连接状态（监听状态），此时该进程会进入阻塞态，即不再向下执行，有连接请求后，程序继续往下执行，调用accept函数处理此次连接。
+
+
+
+（3）Linux 中，对套接字数据进行 I/O 时可以直接使用文件 I/O 相关函数；而在 Windows 中则不可以。原因为何
+
+> Linux中，一切皆文件。在Linux世界里，socket也被认为是文件的一种，socket操作与文件操作没有区别，因此在网络数据传输过程中，可以直接使用I/O相关函数。
+>
+> windows里，socket和文件不是一个概念，当然就不能直接使用文件I/O函数来操作socket。
+
+
+
+（4）创建套接字后一般会给他分配地址，为什么？为了完成地址分配需要调用哪个函数？
+
+> 当我们与其它主机进行数据传输时，我们得知道目标主机的地址，目标主机回应消息也需要我们的地址。对套接字来说，地址就是ip地址和端口号。
+>
+> 调用bind函数分配地址。
+
+
+
+（5）Linux 中的文件描述符与 Windows 的句柄实际上非常类似。请以套接字为对象说明它们的含义。
+
+> 略
+
+（6）底层 I/O 函数与 ANSI 标准定义的文件 I/O 函数有何区别？
+
+> 文件 I/O 又称为低级磁盘 I/O，遵循 POSIX 相关标准。任何兼容 POSIX 标准的操作系统上都支持文件I/O。标准 I/O 被称为高级磁盘 I/O，遵循 ANSI C 相关标准。只要开发环境中有标准 I/O 库，标准 I/O 就可以使用。（Linux 中使用的是 GLIBC，它是标准C库的超集。不仅包含 ANSI C 中定义的函数，还包括 POSIX 标准中定义的函数。因此，Linux 下既可以使用标准 I/O，也可以使用文件 I/O）。
+
+（7）参考本书给出的示例`low_open.c`和`low_read.c`，分别利用底层文件 I/O 和 ANSI 标准 I/O 编写文件复制程序。可任意指定复制程序的使用方法。
+
+**底层文件 I/O**
+
+示例代码： 
+
+[low_open.c](https://github.com/wangjunstf/TCP-IP-Network-Note/blob/main/ch01-%E7%90%86%E8%A7%A3%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A5%97%E6%8E%A5%E5%AD%97/src/low_open.c)
+
+[low_read.c](https://github.com/wangjunstf/TCP-IP-Network-Note/blob/main/ch01-%E7%90%86%E8%A7%A3%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A5%97%E6%8E%A5%E5%AD%97/src/low_read.c)
+
+**ANSI 标准 I/O**
+
+示例代码：
+
+[ansi_open.c](https://github.com/wangjunstf/TCP-IP-Network-Note/blob/main/ch01-%E7%90%86%E8%A7%A3%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E5%92%8C%E5%A5%97%E6%8E%A5%E5%AD%97/src/ansi_open.c)
+
+[ansi_read.c](
 
 
 
