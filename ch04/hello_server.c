@@ -5,7 +5,7 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 
-void errorHandling(const char* message);
+void errorHandling(const char *message);
 
 int main(int argc, char *argv[])
 {
@@ -39,23 +39,25 @@ int main(int argc, char *argv[])
     struct sockaddr_in sockClientAddr;
     socklen_t clientAddrLen = sizeof(sockClientAddr);
 
-    
-    //调用accept函数受理连接请求，如果在没有连接请求的情况下调用该函数，则不会返回，直到有连接请求为止。
-    int sockClient = accept(sockServ, (struct sockaddr *)&sockClientAddr, &clientAddrLen);
-    if (sockClient == -1)
+    for (int i = 0; i < 5; i++)
     {
-        errorHandling("accept() error!");
-    }
-    else
-    {
-        puts("New Client connected...");
+        //调用accept函数受理连接请求，如果在没有连接请求的情况下调用该函数，则不会返回，直到有连接请求为止。
+        int sockClient = accept(sockServ, (struct sockaddr *)&sockClientAddr, &clientAddrLen);
+        if (sockClient == -1)
+        {
+            errorHandling("accept() error!");
+        }
+        else
+        {
+            puts("New Client connected...");
+        }
+
+        char message[] = "Hello World!";
+        //write函数用于传输数据，若程序经accept函数运行到本行，说明已经有了连接请求
+        write(sockClient, message, sizeof(message));
+        close(sockClient);
     }
 
-    char message[] = "Hello World!";
-    //write函数用于传输数据，若程序经accept函数运行到本行，说明已经有了连接请求
-    write(sockClient, message, sizeof(message));
-
-    close(sockClient);
     close(sockServ);
 
     return 0;
