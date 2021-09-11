@@ -19,13 +19,13 @@ IPv4和IPv6的差别主要是表示IP地址所用的字节数，目前通用的�
 
 IPv4标准的4字节地址分为网络地址和主机（指计算机）地址，且分为A，B，C，D，E等类型。一般不使用已被预约了的E类地址，故省略。
 
-![IPv4地址族](https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/IPv4%E5%9C%B0%E5%9D%80%E6%97%8F.png)
+![IPv4地址族](https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/IPv4%E5%9C%B0%E5%9D%80%E6%97%8F.png)
 
 网络地址是为区分网络而设置的一部分IP地址。假设向www.semi.com公司传输数据，该公司内部构件了局域网，把所有计算机连接起来。因此，首先应向SEMI.COM网络传输数据。也就是说，并非一开始就浏览所有的4字节数据，进而找到目标主机；而是仅浏览4字节IP地址的网络地址，先把数据传到SEMI.COM的网络。SEMI.COM的网络（构成网络的路由器）接收到数据后，浏览传输数据的主机地址并将数据传给目标计算机。
 
 下图展示了这个过程：
 
-![基于IP地址的数据传输过程](https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E5%9F%BA%E4%BA%8EIP%E5%9C%B0%E5%9D%80%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.png)
+<img src="https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/%E5%9F%BA%E4%BA%8EIP%E5%9C%B0%E5%9D%80%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.png" alt="基于IP地址的数据传输过程" style="zoom: 67%;" />
 
 
 
@@ -65,7 +65,7 @@ IP地址用于区分计算机，只要有IP地址就可以向目标主机传输�
 
 计算机中一般配有NIC（Network InterFace Card, 网络接口卡）数据传输设备。通过NIC向计算机内部传输数据时会用到IP。操作系统负责把传递到内部的数据适当分配给套接字，这时就要利用端口号。也就是说，通过NIC接收的数据内有端口号，操作系统正是参考次端口号把数据传输给相应的套接字。
 
-![数据分配过程](https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D%E8%BF%87%E7%A8%8B.png)
+![数据分配过程](https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D%E8%BF%87%E7%A8%8B.png)
 
 端口号由16位构成，可分配的端口号范围为：0到65535。但0到1203是知名端口（Well-know PORT），一般分配给特定应用程序，所以应当分配次范围外的值。另外，TCP套接字和UDP套接字可以使用同样的端口号，并不会冲突。
 

@@ -83,7 +83,7 @@ Operation result: 12        # 服务器返回结果12      其计算过程是：
 * 服务器端以4字节整数型向客户端传送运算结果
 * 客户端得到运算结果后终止与服务器端的连接
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E5%AE%A2%E6%88%B7%E7%AB%AFop_client%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E6%A0%BC%E5%BC%8F.png" alt="客户端op_client的数据传送格式" style="zoom: 50%;" />
+<img src="http://qqimage.wangjunblogs.com/uPic/%E5%AE%A2%E6%88%B7%E7%AB%AFop_client%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E6%A0%BC%E5%BC%8F.png" alt="客户端op_client的数据传送格式" style="zoom: 50%;" />
 
 ### 3.3 代码实现
 
@@ -298,7 +298,7 @@ TCP套接字的数据收发无边界，服务器端可以一次性调用write函
 
 
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/tcp%E5%A5%97%E6%8E%A5%E5%AD%97%E7%BC%93%E5%86%B2.png" alt="tcp套接字缓冲" style="zoom: 50%;" />
+<img src="http://qqimage.wangjunblogs.com/uPic/tcp%E5%A5%97%E6%8E%A5%E5%AD%97%E7%BC%93%E5%86%B2.png" alt="tcp套接字缓冲" style="zoom: 50%;" />
 
 
 
@@ -361,7 +361,7 @@ TCP是可靠的数据传输，那怎么实现可靠的数据传输？先从建�
 
 
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E6%88%AA%E5%B1%8F2021-04-21%20%E4%B8%8B%E5%8D%884.03.09.png" alt="截屏2021-04-21 下午4.03.09" style="zoom:33%;" />
+<img src="http://qqimage.wangjunblogs.com/uPic/%E6%88%AA%E5%B1%8F2021-04-21%20%E4%B8%8B%E5%8D%884.03.09.png" alt="截屏2021-04-21 下午4.03.09" style="zoom:33%;" />
 
 
 
@@ -399,7 +399,7 @@ TCP是可靠的数据传输，那怎么实现可靠的数据传输？先从建�
 
 通过第一步三次握手过程完成了数据交换准备。下面就正式开始收发数据，其默认方式如图所示：
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/tcp%E5%A5%97%E6%8E%A5%E5%AD%97%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.png" alt="tcp套接字的数据传输过程" style="zoom:33%;" />
+<img src="http://qqimage.wangjunblogs.com/uPic/tcp%E5%A5%97%E6%8E%A5%E5%AD%97%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.png" alt="tcp套接字的数据传输过程" style="zoom:33%;" />
 
 第一次主机A向主机B发送了100字节的数据，并把第一个字节编号为1200。主机B为了告诉主机A已成功接收发送的100字节数据，向主机A发送ACK1301，意思是，编号到1300，包括1300的数据已成功接收，请发送开始编号为1301的数据。
 
@@ -417,7 +417,7 @@ TCP是可靠的数据传输，那怎么实现可靠的数据传输？先从建�
 
 当发送的数据丢失时，TCP通过以下方式解决。
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/tcp%E5%A5%97%E6%8E%A5%E5%AD%97%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%8F%91%E7%94%9F%E9%94%99%E8%AF%AF.png" alt="tcp套接字数据传输发生错误" style="zoom:67%;" />
+<img src="http://qqimage.wangjunblogs.com/uPic/tcp%E5%A5%97%E6%8E%A5%E5%AD%97%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%8F%91%E7%94%9F%E9%94%99%E8%AF%AF.png" alt="tcp套接字数据传输发生错误" style="zoom:67%;" />
 
 如上图所示，当主机A向主机B发送SEQ为1301的数据包时发生了丢失，在规定的时间内主机B没回复ACK，因此主机A认为数据已经丢失，然后再次向主机B重传相同的数据，直到主机B发送了ACK确认消息。
 
@@ -449,7 +449,7 @@ TCP套接字的结束也非常优雅。如果对方还有数据没有传输完�
 
 如下图所示：
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/tcp%E5%A5%97%E6%8E%A5%E5%AD%97%E6%96%AD%E5%BC%80%E8%BF%87%E7%A8%8B.png" alt="tcp套接字断开过程" style="zoom:50%;" />
+<img src="http://qqimage.wangjunblogs.com/uPic/tcp%E5%A5%97%E6%8E%A5%E5%AD%97%E6%96%AD%E5%BC%80%E8%BF%87%E7%A8%8B.png" alt="tcp套接字断开过程" style="zoom:50%;" />
 
 
 
@@ -501,7 +501,7 @@ TCP套接字的结束也非常优雅。如果对方还有数据没有传输完�
 
 （5）第2章示例tcp_server.c（第1章的hello_server.c）和tcp_client.c中，客户端接收服务器端传输的字符串后便退出。现更改程序，使服务器和客户端各传递1次字符串。考虑到使用TCP协议，所以传递字符串前先以4字节整数型方式传递字符串长度。连接时服务器端和客户端数据传输格式如下。
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E6%88%AA%E5%B1%8F2021-04-21%20%E4%B8%8B%E5%8D%8811.46.01.png" alt="截屏2021-04-21 下午11.46.01" style="zoom: 67%;" />
+<img src="http://qqimage.wangjunblogs.com/uPic/%E6%88%AA%E5%B1%8F2021-04-21%20%E4%B8%8B%E5%8D%8811.46.01.png" alt="截屏2021-04-21 下午11.46.01" style="zoom: 67%;" />
 
 
 
@@ -511,7 +511,6 @@ TCP套接字的结束也非常优雅。如果对方还有数据没有传输完�
 
 
 (5)和(6)的代码不幸遗失，以后有机会加上。
-
 
 
 

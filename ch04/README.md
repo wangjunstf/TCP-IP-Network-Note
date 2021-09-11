@@ -14,17 +14,17 @@ TCP是Transmission Control Protocol(传输控制协议)的简写。
 
 1. TCP/IP协议栈可用下图表示：
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/TCP:IP%E5%8D%8F%E8%AE%AE%E6%A0%882.png" alt="TCP:IP协议栈2" style="zoom: 33%;" />
+<img src="https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/TCP:IP%E5%8D%8F%E8%AE%AE%E6%A0%882.png" alt="TCP:IP协议栈2" style="zoom: 33%;" />
 
 从上图可以看出，面对“基于互联网的有效数据传输”的命题，并非通过1个庞大的协议解决问题，而是化整为零，通过层次化方案——TCP/IP协议栈解决
 
 2. 通过TCP套接字收发数据时需要借助下图这四层。
 
-   <img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/tcp%E5%8D%8F%E8%AE%AE%E6%A0%882.png" alt="tcp协议栈" style="zoom:33%;" />
+   <img src="https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/tcp%E5%8D%8F%E8%AE%AE%E6%A0%882.png" alt="tcp协议栈" style="zoom:33%;" />
 
 2. 反之通过UDP套接字收发数据时，利用下图4层协议完成。
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/UDP%E5%8D%8F%E8%AE%AE%E6%A0%882.png" alt="UDP协议栈" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/UDP%E5%8D%8F%E8%AE%AE%E6%A0%882.png" alt="UDP协议栈" style="zoom:33%;" />
 
 各层可能通过操作系统等软件实现，也可能通过类似NIC的硬件实现。
 
@@ -48,7 +48,7 @@ TCP是Transmission Control Protocol(传输控制协议)的简写。
 
 链路层是物理链接领域标准化的结果，也是最基本的领域，专门定义LAN，WAN，MAN等网络标准。若两台主机通过网络进行数据交换，需要通过下图所示物理连接，链路层就负责这些标准。
 
-![网络连接结构](https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%BB%93%E6%9E%84.png)
+![网络连接结构](https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E7%BB%93%E6%9E%84.png)
 
 
 
@@ -80,7 +80,7 @@ IP层只关注一个数据包（数据传输的基本单位）的传输过程。
 
 以上就是TCP的作用。如果数据交换过程中可以确认对方已收到数据，并重传丢失的数据，那么即便IP层不保证数据传输，这类通信也是可靠的。
 
-![传输控制协议](https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE.png)
+![传输控制协议](https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE.png)
 
 
 
@@ -100,7 +100,7 @@ IP层只关注一个数据包（数据传输的基本单位）的传输过程。
 
 下图给出了TCP服务器端默认的函数调用顺序，绝大部分TCP服务器端都按照该顺序调用。
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/TCP%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F2.png" alt="TCP服务器端函数调用顺序" style="zoom: 33%;" />
+<img src="https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/TCP%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F2.png" alt="TCP服务器端函数调用顺序" style="zoom: 33%;" />
 
 
 
@@ -124,7 +124,7 @@ int listen(int sock, int backlog);
 
 “服务端处于等待连接请求状态”是指，客户端请求连接时，受理连接前一直使请求处于等待状态。如下图：
 
-![等待连接请求状态](https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E7%AD%89%E5%BE%85%E8%BF%9E%E6%8E%A5%E8%AF%B7%E6%B1%82%E7%8A%B6%E6%80%81.png)
+![等待连接请求状态](https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/%E7%AD%89%E5%BE%85%E8%BF%9E%E6%8E%A5%E8%AF%B7%E6%B1%82%E7%8A%B6%E6%80%81.png)
 
 上图可知作为listen函数的第一个参数传递的文件描述符套接字的用途。客户端连接请求本身也是从网络中接收到的一种数据，而要想接收就需要套接字，此任务就是由服务器端套接字完成。服务器端套接字是接收连接请求的一名门卫或一扇门。
 
@@ -155,7 +155,7 @@ int accept(int sock, struct sockaddr *addr, socklen_t* addrlen);
 
 **accept函数受理连接请求等待队列中待处理的客户端连接请求，函数调用成功时，accept函数内部将产生用于数据I/O的套接字，并返回其文件描述符**
 
-具体过程如下图所示：![受理连接请求](https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E5%8F%97%E7%90%86%E8%BF%9E%E6%8E%A5%E8%AF%B7%E6%B1%82.png)
+具体过程如下图所示：![受理连接请求](https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/%E5%8F%97%E7%90%86%E8%BF%9E%E6%8E%A5%E8%AF%B7%E6%B1%82.png)
 
 
 
@@ -243,7 +243,7 @@ void errorHandling(const char* message){
 
 ### 4.2.5 客户端的默认函数调用顺序
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/TCP%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F.png" alt="TCP客户端函数调用顺序" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/TCP%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F.png" alt="TCP客户端函数调用顺序" style="zoom:50%;" />
 
 与服务器端相比，区别就在于“请求连接”，它是创建客户端套接字后向服务器端发起的连接请求。同过以下函数发起连接请求。
 
@@ -336,7 +336,7 @@ void errorHandling(const char* message){
 
 前面讲解了TCP服务器端/客户端的实现顺序，实际二者并非相互独立，它们的调用关系可以用下图表示：
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E6%88%AA%E5%B1%8F2021-04-15%20%E4%B8%8B%E5%8D%888.28.16.png" alt="截屏2021-04-15 下午8.28.16" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/%E6%88%AA%E5%B1%8F2021-04-15%20%E4%B8%8B%E5%8D%888.28.16.png" alt="截屏2021-04-15 下午8.28.16" style="zoom:50%;" />
 
 
 
@@ -356,7 +356,7 @@ void errorHandling(const char* message){
 
 之前讨论的Hello world服务器端处理完1个客户端连接请求就退出了，连接请求等待队列实际没有太大意义。但这并非我们想象的服务器端。设置好等待队列的大小后，应向所有客户端提供服务。如果想继续受理后续的客户端连接请求，应该怎样扩展代码？最简单的办法就是插入循环语句反复调用accept函数，如下图所示：
 
-<img src="https://wangjunblogs.oss-cn-beijing.aliyuncs.com/TCP-IP-Network-ch04/%E8%BF%AD%E4%BB%A3%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F.png" alt="迭代服务器端调用顺序" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/wangjunstf/pics/main/uPic/%E8%BF%AD%E4%BB%A3%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%B0%83%E7%94%A8%E9%A1%BA%E5%BA%8F-20210910221452466.png" alt="迭代服务器端调用顺序" style="zoom:50%;" />
 
 从上图可知，调用accept函数后，紧接着调用I/O相关的read，write函数。然后调用close函数，这并非针对服务器端套接字，而是针对accept函数调用时创建的套接字。
 
