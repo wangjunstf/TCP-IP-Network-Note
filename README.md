@@ -43,7 +43,7 @@
 
 第 11 章 [进程间通信](https://github.com/wangjunstf/TCP-IP-Network-Note/tree/main/ch11)
 
-第 12 章  [I/O复用](I/O复用)
+第 12 章  [I/O复用](https://github.com/wangjunstf/TCP-IP-Network-Note/tree/main/ch12)
 
 第 13 章 [多种I/O函数](https://github.com/wangjunstf/TCP-IP-Network-Note/tree/main/ch13)
 
